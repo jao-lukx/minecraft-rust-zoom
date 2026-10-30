@@ -2,6 +2,7 @@
   "id": "rust_zoom",
   "name": "Zoom Rust",
   "description": "Zoom suave com C, roda para ajustar e sensibilidade proporcional.",
-  "version": "0.1.0",
-  "horizon": "e4472a7423da0740c881132d61e8e9b368bfef4c"
+  "version": "0.2.0",
+  "horizon": "e4472a7423da0740c881132d61e8e9b368bfef4c",
+  "format": "hnmod"
 }

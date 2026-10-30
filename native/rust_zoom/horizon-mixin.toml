@@ -1,0 +1,54 @@
+[mod]
+id = "rust_zoom"
+version = "0.2.0"
+priority = 100
+
+[compatibility]
+horizon_revision = "e4472a7423da0740c881132d61e8e9b368bfef4c"
+
+[[module]]
+id = "runtime"
+file = "crates/horizon-client/src/game.rs"
+name = "rust_zoom_runtime"
+source = "runtime.rs"
+
+[[module]]
+id = "core"
+file = "crates/horizon-client/src/game.rs"
+name = "rust_zoom_core"
+source = "core.rs"
+
+[[injection]]
+id = "list"
+kind = "HEAD"
+target = "horizon_client::game::native_hooks::Game<'_>::native_mods"
+helper = "list.rs"
+bindings = [{"name" = "game", "ty" = "&mut crate::game::Game<'_>", "value" = "&mut *self"}, {"name" = "mods", "ty" = "&mut Vec<crate::game::native_hooks::NativeMod>", "value" = "mods"}]
+
+[[injection]]
+id = "frame"
+kind = "HEAD"
+target = "horizon_client::game::native_hooks::Game<'_>::native_frame"
+helper = "frame.rs"
+bindings = [{"name" = "game", "ty" = "&mut crate::game::Game<'_>", "value" = "&mut *self"}]
+
+[[injection]]
+id = "key"
+kind = "HEAD"
+target = "horizon_client::game::native_hooks::Game<'_>::native_key"
+helper = "key.rs"
+bindings = [{"name" = "game", "ty" = "&mut crate::game::Game<'_>", "value" = "&mut *self"}, {"name" = "key", "ty" = "&str", "value" = "key"}, {"name" = "pressed", "ty" = "bool", "value" = "pressed"}]
+
+[[injection]]
+id = "wheel"
+kind = "HEAD"
+target = "horizon_client::game::native_hooks::Game<'_>::native_wheel"
+helper = "wheel.rs"
+bindings = [{"name" = "game", "ty" = "&mut crate::game::Game<'_>", "value" = "&mut *self"}, {"name" = "steps", "ty" = "f32", "value" = "steps"}, {"name" = "claimed", "ty" = "&mut bool", "value" = "claimed"}]
+
+[[injection]]
+id = "view"
+kind = "HEAD"
+target = "horizon_client::game::native_hooks::Game<'_>::native_zoom"
+helper = "view.rs"
+bindings = [{"name" = "game", "ty" = "&crate::game::Game<'_>", "value" = "&*self"}, {"name" = "zoom", "ty" = "&mut Option<crate::game::native_hooks::NativeZoom>", "value" = "zoom"}]

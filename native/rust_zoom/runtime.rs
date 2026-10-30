@@ -60,7 +60,7 @@ impl Game<'_> {
     pub(super) fn rust_zoom_list(&mut self, mods: &mut Vec<NativeMod>) {
         mods.push(NativeMod {
             id: ID.into(),
-            title: "Zoom Rust 0.1.0".into(),
+            title: "Zoom Rust 0.2.0".into(),
             description: "Segure C; ajuste com a roda.".into(),
             keys: vec![["zoom".into(), "Zoom".into(), "key.keyboard.c".into()]],
         });
