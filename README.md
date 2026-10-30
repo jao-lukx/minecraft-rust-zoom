@@ -56,3 +56,7 @@ Segure **C** para zoom suave de 4×. Durante o zoom, a roda ajusta entre 1,25× 
 - [minecraft-rust-jei](https://github.com/jao-lukx/minecraft-rust-jei)
 - [minecraft-rust-mouse-tweaks](https://github.com/jao-lukx/minecraft-rust-mouse-tweaks)
 - [minecraft-rust-sodium](https://github.com/jao-lukx/minecraft-rust-sodium)
+
+## Download dos fontes
+
+[Baixar pacote 0.1.0](https://raw.githubusercontent.com/jao-lukx/minecraft-rust-zoom/main/downloads/rust_zoom-0.1.0-source.zip). Confira o SHA-256 em `downloads/SHA256SUMS`. Exige recompilar o cliente, conforme as instruções acima.
